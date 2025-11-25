@@ -63,12 +63,10 @@ export class ListeSuggestionsComponent {
     }
   ];
 
-  // ----------- Like -----------
   like(s: Suggestion) {
     s.likes++;
   }
 
-  // ----------- Ajouter / retirer des favoris -----------
   toggleFavorite(s: Suggestion) {
     s.isFavorite = !s.isFavorite;
 

@@ -16,8 +16,7 @@
         <p><strong>Date :</strong> {{ s.date | date:'yyyy-MM-dd' }}</p>
         <p><strong>Status :</strong> {{ s.status }}</p>
 
-        <!-- ***********   BOUTONS LIKE / FAVORIS   *********** -->
-        <!-- CACHER quand status = refusee -->
+        
         <div *ngIf="s.status !== 'refusee'">
 
           <button class="btn btn-success btn-sm me-2" (click)="like(s)">
@@ -30,7 +29,6 @@
 
         </div>
 
-        <!-- Message si suggestion refusée -->
         <div *ngIf="s.status === 'refusee'" class="text-danger mt-2">
           Suggestion refusée — actions désactivées.
         </div>
@@ -42,7 +40,6 @@
   </div>
 </div>
 
-<!-- LISTE DES FAVORIS -->
 <div class="mt-4" *ngIf="favorites.length > 0">
   <h4>⭐ Suggestions favorites ({{ favorites.length }})</h4>
   <ul>
