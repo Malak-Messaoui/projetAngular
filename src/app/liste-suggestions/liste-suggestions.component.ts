@@ -83,4 +83,6 @@ export class ListeSuggestionsComponent {
     s.isFavorite = false;
     this.favorites = this.favorites.filter(f => f.id !== s.id);
   }
+
+  search:string="";
 }

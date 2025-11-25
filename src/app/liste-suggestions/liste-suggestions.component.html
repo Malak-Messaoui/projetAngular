@@ -1,5 +1,10 @@
+      <input id="search" type="text" placeholder="Rechercher..." aria-label="Rechercher" [(ngModel)]="search" />
+
 <div class="row">
+
   <div class="col-md-4 mb-3" *ngFor="let s of suggestions">
+
+   <ng-container *ngIf="s.title==search || s.category==search || search== ''">
     <div class="card">
       <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Suggestion image">
 
@@ -32,6 +37,8 @@
 
       </div>
     </div>
+  </ng-container>
+
   </div>
 </div>
 
