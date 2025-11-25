@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-4 mb-3" *ngFor="let s of suggestions">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Suggestion image">
+
+      <div class="card-body">
+        <h5 class="card-title">{{ s.title }}</h5>
+
+        <p><strong>Description :</strong> {{ s.description }}</p>
+        <p><strong>Catégorie :</strong> {{ s.category }}</p>
+        <p><strong>Date :</strong> {{ s.date | date:'yyyy-MM-dd' }}</p>
+        <p><strong>Status :</strong> {{ s.status }}</p>
+
+        <!-- ***********   BOUTONS LIKE / FAVORIS   *********** -->
+        <!-- CACHER quand status = refusee -->
+        <div *ngIf="s.status !== 'refusee'">
+
+          <button class="btn btn-success btn-sm me-2" (click)="like(s)">
+            👍 Like ({{ s.likes }})
+          </button>
+
+          <button class="btn btn-warning btn-sm" (click)="toggleFavorite(s)">
+            ⭐ {{ s.isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris' }}
+          </button>
+
+        </div>
+
+        <!-- Message si suggestion refusée -->
+        <div *ngIf="s.status === 'refusee'" class="text-danger mt-2">
+          Suggestion refusée — actions désactivées.
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LISTE DES FAVORIS -->
+<div class="mt-4" *ngIf="favorites.length > 0">
+  <h4>⭐ Suggestions favorites ({{ favorites.length }})</h4>
+  <ul>
+    <li *ngFor="let f of favorites">
+      {{ f.title }} — {{ f.category }}
+      <button class="btn btn-sm btn-danger ms-2" (click)="removeFromFavorites(f)">
+        Retirer
+      </button>
+    </li>
+  </ul>
+</div>

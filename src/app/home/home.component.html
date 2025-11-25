@@ -1,0 +1,20 @@
+<input id="search" type="text" placeholder="Rechercher..." aria-label="Rechercher" [(ngModel)]="nameFilter" />
+<h1>Liste de Produits</h1>
+<table  class="table table-bordered">
+  <tr >
+    <th>Product Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Like</th>
+  </tr>
+  <tr *ngFor="let p of product ,let i = index">
+    <ng-container *ngIf="p.name==nameFilter">
+    <td>{{p.name}}</td>
+    <td>{{p.price}}</td>
+    <td>{{p.quantity}}</td>
+    <td>{{p.like}}</td>
+    <td><button (click)="nbrLikes(p)" class="btn btn-info">LIKE</button></td>
+  </ng-container>
+  </tr>
+
+  <button (click)="save()">save</button>
