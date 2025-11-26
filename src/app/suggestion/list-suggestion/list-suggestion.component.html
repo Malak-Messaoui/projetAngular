@@ -6,7 +6,7 @@
 
    <ng-container *ngIf="s.title==search || s.category==search || search== ''">
     <div class="card">
-      <img src="https://via.placeholder.com/300x180" class="card-img-top" alt="Suggestion image">
+      <img src="../01.png" class="card-img-top" alt="Suggestion image">
 
       <div class="card-body">
         <h5 class="card-title">{{ s.title }}</h5>
@@ -20,11 +20,11 @@
         <div *ngIf="s.status !== 'refusee'">
 
           <button class="btn btn-success btn-sm me-2" (click)="like(s)">
-            👍 Like ({{ s.likes }})
+             Like ({{ s.likes }})
           </button>
 
           <button class="btn btn-warning btn-sm" (click)="toggleFavorite(s)">
-            ⭐ {{ s.isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris' }}
+             {{ s.isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris' }}
           </button>
 
         </div>

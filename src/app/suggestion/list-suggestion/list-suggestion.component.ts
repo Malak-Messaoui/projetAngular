@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { Suggestion } from '../model/suggestion';
+import { Suggestion } from 'src/app/model/suggestion';
 
 @Component({
-  selector: 'app-liste-suggestions',
-  templateUrl: './liste-suggestions.component.html',
-  styleUrls: ['./liste-suggestions.component.css']
+  selector: 'app-list-suggestion',
+  templateUrl: './list-suggestion.component.html',
+  styleUrls: ['./list-suggestion.component.css']
 })
-export class ListeSuggestionsComponent {
-
-  favorites: Suggestion[] = [];
+export class ListSuggestionComponent {
+favorites: Suggestion[] = [];
 
   suggestions: Suggestion[] = [
     {

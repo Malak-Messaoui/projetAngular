@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
-import { ListeSuggestionsComponent } from './liste-suggestions/liste-suggestions.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { ListeSuggestionsComponent } from './liste-suggestions/liste-suggestions
     HomeComponent,
     FooterComponent,
     HeaderComponent,
-    ListeSuggestionsComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
